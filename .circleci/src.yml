@@ -15,7 +15,7 @@ workflows:
 
       - orb-tools/review:
           exclude: ''
-          max_command_length: 1024
+          max_command_length: 256
           resource_class: small
 
       - general/orb-pack:
@@ -33,7 +33,7 @@ workflows:
           requires:
             - general/orb-pack
           context:
-            - circleci
+            - orb-publishing
             - github
           filters:
             branches:

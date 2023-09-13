@@ -21,5 +21,4 @@ steps:
   - checkout
   - helm/install-helm-client
   - run:
-      name: Helm lint
       command: helm lint << parameters.chart-path >>

@@ -1,9 +1,6 @@
 version: 2.1
 
 
-setup: true
-
-
 orbs:
   dynamic: bjd2385/dynamic-continuation@3.7.1
   general: bjd2385/general@0.7.8
@@ -17,7 +14,8 @@ workflows:
       # Development branches
 
       - dynamic/continue:
-          context: circleci
+          default-branch: master
+          context: orb-publishing
 
       # On tag
 
@@ -66,10 +64,10 @@ workflows:
             tags:
               only: /^v?[0-9]+\.[0-9]+\.[0-9]+$/
 
-      # - general/github-release:
-      #     context: github
-      #     filters:
-      #       branches:
-      #         ignore: /.*/
-      #       tags:
-      #         only: /^v?[0-9]+\.[0-9]+\.[0-9]+$/
+      - general/github-release:
+          context: github
+          filters:
+            branches:
+              ignore: /.*/
+            tags:
+              only: /^v?[0-9]+\.[0-9]+\.[0-9]+$/
