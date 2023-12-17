@@ -1,3 +1,5 @@
+> **Notice:** this orb is no longer under active development. It has been archived in favor of [premiscale/general](https://github.com/premiscale/general-orb).
+
 # `general` orb for CircleCI
 
 This orb is a collection of useful commands and jobs I like to reuse in many of my repositories to simplify their configs and reduce code duplication.
